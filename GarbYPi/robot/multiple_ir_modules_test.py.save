@@ -1,0 +1,12 @@
+#import libraries
+import gpiozero
+import time
+
+leftIR = gpiozero.DigitalInputDevice(10)
+rightIR = gpiozero.DigitalInputDevice(9)
+
+while True:
+	if (rightIR.is_active == True) and (leftIR.is_active == True):
+		print ("Wall Detected in front")
+	elif (rightIR.is_active == True)  and (leftIR.is_active == False):
+		print("Wall Detected at right, Turning")
